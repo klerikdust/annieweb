@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.2cce8147.chunk.css",
-    "main.js": "/static/js/main.cb5ff119.chunk.js",
-    "main.js.map": "/static/js/main.cb5ff119.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.d40acd83.js",
-    "runtime~main.js.map": "/static/js/runtime~main.d40acd83.js.map",
-    "static/js/2.1f65a687.chunk.js": "/static/js/2.1f65a687.chunk.js",
-    "static/js/2.1f65a687.chunk.js.map": "/static/js/2.1f65a687.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6edf3c57729676721bd8f517764eff7a.js": "/precache-manifest.6edf3c57729676721bd8f517764eff7a.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/static/css/main.2cce8147.chunk.css.map",
-    "static/media/annieava.png": "/static/media/annieava.af720053.png"
+    "main.css": "/anniediscord.github.io/static/css/main.2cce8147.chunk.css",
+    "main.js": "/anniediscord.github.io/static/js/main.c9b8ef39.chunk.js",
+    "main.js.map": "/anniediscord.github.io/static/js/main.c9b8ef39.chunk.js.map",
+    "runtime~main.js": "/anniediscord.github.io/static/js/runtime~main.f75d4d07.js",
+    "runtime~main.js.map": "/anniediscord.github.io/static/js/runtime~main.f75d4d07.js.map",
+    "static/js/2.1f65a687.chunk.js": "/anniediscord.github.io/static/js/2.1f65a687.chunk.js",
+    "static/js/2.1f65a687.chunk.js.map": "/anniediscord.github.io/static/js/2.1f65a687.chunk.js.map",
+    "index.html": "/anniediscord.github.io/index.html",
+    "precache-manifest.b2d106c89b8b6934a122709cd05e445c.js": "/anniediscord.github.io/precache-manifest.b2d106c89b8b6934a122709cd05e445c.js",
+    "service-worker.js": "/anniediscord.github.io/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/anniediscord.github.io/static/css/main.2cce8147.chunk.css.map",
+    "static/media/annieava.png": "/anniediscord.github.io/static/media/annieava.af720053.png"
   }
 }
