@@ -1,5 +1,5 @@
 import React from "react";
-import Slide from "@material-ui/core/Slide";
+import { Grow, Slide } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 
 class Landing extends React.Component {
@@ -10,46 +10,52 @@ class Landing extends React.Component {
     return (
       <div className="Landing">
         <div className="Image">
-        <img 
-            src={require('../assets/annieava.png')}
-            alt="LandingImage"
-            style={{
-              float: "right",
-              marginTop: 100,
-              marginRight: 100
-            }}
-          />
+        <Slide
+            in={true}
+            timeout={1000}
+            direction="left"
+          >
+          <img 
+              src={require('../assets/annielandingpage.png')}
+              alt="LandingImage"
+              style={{
+                float: "right",
+                width: "50%",
+                height: "50%",
+              }}
+            />
+        </Slide>
         </div>
         <div 
           className="Text" 
           align="left"
           style={{
             float: "left",
-            marginTop: 250
+            marginTop: "40vh"
           }}>
-          <Slide
+          <Grow
             in={true}
-            timeout={1000}
+            timeout={2000}
             direction="right"
           >
             <Typography 
                 variant="h1"
                 style={{
-                  color: "rgba(0, 0, 0, 0.6)",
-                  fontSize: 90,
+                  color: "rgba(0, 0, 0, 0.8)",
+                  fontSize: "5vw",
                   marginLeft: 100,
                 }}>
-                Hey, It's <span style={{
+                Say hello to <span style={{
                   fontWeight: "bold",
                   //color: "rgba(102,204,255,0.7)"}}
                   }}>
                   Annie.
                   </span>
               </Typography>
-          </Slide>
-          <Slide
+          </Grow>
+          <Grow
             in={true}
-            timeout={2000}
+            timeout={3000}
             direction="right"
           >
             <Typography 
@@ -57,11 +63,13 @@ class Landing extends React.Component {
                 style={{
                   color: "rgba(0, 0, 0, 0.6)",
                   marginLeft: 100,
-                  marginTop: 15
+                  marginTop: 15,
+                  fontSize: "1vw",
+                  fontWeight: "thin"
                 }}>
-                Powerful. Artistic. Lovable.
+                Delivering the best experience<br />to you, as an artist.
               </Typography>
-          </Slide>
+          </Grow>
         </div>
       </div>
     );

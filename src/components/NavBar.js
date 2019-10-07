@@ -18,6 +18,10 @@ const Team = React.forwardRef((props, ref) => (
   <Link innerRef={ref} to="/team" {...props} />
 ));
 
+const About = React.forwardRef((props, ref) => (
+  <Link innerRef={ref} to="/about" {...props} />
+));
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -50,6 +54,7 @@ const NavBar = () => {
                   marginLeft: 'auto',
                   marginRight: 20
                   }}>
+                  <Button size="large" component={About} to="/about">About</Button>
                   <Button size="large" component={Team} to="/team">Team</Button>
                   <Button size="large" component={Docs} to="/docs">Documentation</Button>
                 </div>

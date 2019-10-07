@@ -18,8 +18,9 @@ class Team extends React.Component {
             color: "rgba(0, 0, 0, 0.6)",
             fontSize: 50,
             marginLeft: 100,
+            marginTop: "50vh"
             }}>
-            Development Team
+            Why artists should choose Annie?
             </Typography>
             </Slide>
         </div>
