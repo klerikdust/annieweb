@@ -1,170 +1,141 @@
 import React from 'react'
-import Slide from "@material-ui/core/Slide";
+import ClusterHostingIcon from '../assets/clusterhosting-icon.png';
+import ApiIcon from '../assets/api-icon.png';
+import { Grow, Slide } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import Link from '@material-ui/core/Link';
-import Highlight from 'react-highlight.js';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import { Link } from 'react-router-dom';
+import { withStyles } from "@material-ui/core/styles";
 import NavBar from '../components/NavBar';
 
-class Documentation extends React.Component {
-  render() {
+const styling = {
+  card: {
+    width: 220,
+    height: 220,
+    disableRipple: true,
+    borderRadius: "15px",
+    boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+    transition: "boxShadow 500ms",
+    '&:hover': {
+      color: "rgba(50, 50, 50, 1)",
+      borderRadius: "5px",
+      boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
+    },
+    '&:focus': {
+      color: "rgba(255, 255, 255, 1)"
+    }
+  },
+  cardText: {
+    textAlign: "center",
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: 'rgba(0, 0, 0, 0.6)',
+    marginBottom: 100
+  },
+  media: {
+    height: 150,
+    width: 150,
+    marginLeft: 37
+  },
+
+}
+
+const Documentation = (props) => {
+
     return (
       <div className="docs">
         <NavBar />
-        <Slide
-          in={true}
-          timeout={1000}
-          direction="right">
-          <Typography 
-            variant="h2"
-            style={{
-            color: "rgba(0, 0, 0, 0.6)",
-            fontSize: 60,
-            marginLeft: 100,
-            marginTop: "20vh",
-            fontWeight: "bold"
-            }}>
-            Annie's Documentation
-          </Typography>
-        </Slide>
-          <Typography 
-              variant="subtitle1"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              marginTop: 10,
-              fontWeight: "thin"
-              }}>
-              In here you will find anything related to Annie's API.<br />From how to host your own Annie Cluster and in-depth details of the framework.
-            </Typography>
-
+        <div className="header-text" align="center">
+          <Grow
+            in={true}
+            timeout={1000}>
             <Typography 
-              variant="h5"
+              variant="h2"
               style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              marginTop: 50,
-              fontWeight: "bold"
+              color: "rgba(0, 0, 0, 1)",
+              fontSize: 60,
+              marginTop: "20vh",
               }}>
-             Requirements
+              Annie's <span style={{fontWeight: "bold"}}>Documentation</span>
             </Typography>
-
+          </Grow>
+          <Grow
+            in={true}
+            timeout={2000}>
             <Typography 
-              variant="subtitle2"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              fontWeight: "bold"
-              }}>
-              • Node.js v8+<br />
-              • Familiar with discord.js
-            </Typography>
-
-            <Typography 
-              variant="h5"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              fontWeight: "bold",
-              marginTop: 50,
-              }}>
-              1. Fork the repository
-            </Typography>
-
-            <Typography 
-              variant="subtitle2"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              }}>
-              <Link href="https://github.com/klerikdust/anniediscord" target="_blank" className="GitHub URL">
-                {"Link to Annie's GitHub"}
-              </Link>
-            </Typography>
-
-            <Typography 
-              variant="h5"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              fontWeight: "bold",
-              marginTop: 50,
-              }}>
-              2. Setup local environment
-            </Typography>
-
-            <Typography 
-              variant="subtitle2"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              }}>
-              After getting the codebase into your local machine, please create these additional files in the root directory.<br />
-            </Typography>
-
-            <Typography 
-              variant="subtitle2"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginTop: 20,
-              marginLeft: 130,
-              }}>
-              • .env<br />
-              • .data
-            </Typography>
-
-            <Typography 
-              variant="h5"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              fontWeight: "bold",
-              marginTop: 50,
-              }}>
-              3. Create environment config
-            </Typography>
-
-            <Typography 
-              variant="subtitle2"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginLeft: 100,
-              fontWeight: "bold",
-              }}>
-              Create new file called `environment.json` in the .data/ directory and fill it with the following properties :
-            </Typography>
-
-            <Typography 
-              variant="subtitle2"
-              style={{
-              color: "rgba(0, 0, 0, 0.6)",
-              marginTop: 20,
-              marginLeft: 120,
-              fontWeight: "bold",
-              }}>
-             <Highlight language="json">
-                  "dev": [Boolean],<br />
-                  "prefix": [String],<br />
-                  "active_exp": [Boolean],<br />
-                  "DISABLE_COOLDOWN": [Boolean],<br />
-                  "administrator_id": [Array]
-             </Highlight>
-            </Typography>
-
-            <Typography 
-              variant="subtitle2"
-              style={{
-              color: "rgba(204,51,51,1)",
-              marginTop: 20,
-              marginLeft: 120,
-              }}>
-                "dev" determine the current environment > Set true for local development, and false for production.<br />
-                "prefix" used as command code<br />
-                "active_exp" toggle for exp gaining<br />
-                "DISABLED_COOLDOWN" useful toggle when you are testing exp framework<br />
-                "administrator_id" a list of IDs that will be accepted by the cluster during local development.
-            </Typography>
+                variant="subtitle1"
+                style={{
+                color: "rgba(0, 0, 0, 0.6)",
+                marginTop: 10,
+                fontWeight: "thin"
+                }}>
+                Here you will find any useful information related to Annie's API.<br />From how to host your own Annie Cluster and in-depth details of the framework.
+              </Typography>
+          </Grow>
+        </div>
+        
+        
+        <div className="cards" style={{
+          marginBottom: 100, 
+          marginTop: 20,
+          display:"flex",
+          justifyContent: "center",
+          alignItems: "center"}}>
+          <div className="card-1" style={{marginRight:"5vh"}}>
+          <Slide
+            in={true}
+            timeout={1000}
+            direction="right"
+            >
+            <Card className={props.classes.card}>
+              <CardActionArea>
+                <Link to="/docs/cluster-hosting" style={{ textDecoration: 'none' }}>
+                  <CardMedia
+                    className={props.classes.media}
+                    component="img"
+                    src={ClusterHostingIcon}
+                    title="Cluster Hosting"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom className={props.classes.cardText} variant="h5" component="h2">
+                      Cluster Hosting
+                    </Typography>
+                  </CardContent>
+                  </Link>
+                </CardActionArea>         
+            </Card>
+            </Slide>
+          </div>
+          <div className="card-2">
+          <Slide
+            in={true}
+            timeout={1000}
+            direction="left"
+            >
+            <Card className={props.classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={props.classes.media}
+                  component="img"
+                  height="20%"
+                  width="20%"
+                  src={ApiIcon}
+                  title="API"
+                />
+                <CardContent>
+                  <Typography gutterBottom className={props.classes.cardText} variant="h5" component="h2">
+                    API
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+            </Slide>
+          </div>           
+        </div>
       </div>
     )
-  }
 }
-export default Documentation
+export default withStyles(styling)(Documentation)

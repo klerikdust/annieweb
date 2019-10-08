@@ -8,7 +8,9 @@ import App from './App';
 import Documentation from './views/Documentation';
 import Team from './views/Team';
 import About from './views/About';
+import ClusterHosting from './views/ClusterHosting'
 import * as serviceWorker from './serviceWorker';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -23,9 +25,10 @@ const routing = (
       <div>
       <ThemeProvider theme={theme}>
         <Route exact path="/" component={App} />
-        <Route path="/docs" component={Documentation} />
-        <Route path="/team" component={Team} />
-        <Route path="/about" component={About} />
+        <Route exact path="/docs" component={Documentation} />
+        <Route exact path="/team" component={Team} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/docs/cluster-hosting" component={ClusterHosting} />
       </ThemeProvider>
       </div>
     </Router>
