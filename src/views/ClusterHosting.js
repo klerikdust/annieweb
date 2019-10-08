@@ -6,6 +6,9 @@ import DocNavBar from '../components/DocNavBar';
 
 class ClusterHosting extends React.Component {
   render() {
+
+    document.title = "Cluster Hosting | Annie"
+
     return (
       <div className="ClusterHosting">
         <DocNavBar />

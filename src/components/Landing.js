@@ -1,6 +1,7 @@
 import React from "react";
 import { Grow, Slide } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+import ServerLink from '../components/ServerLink';
 
 class Landing extends React.Component {
 
@@ -31,7 +32,8 @@ class Landing extends React.Component {
           align="left"
           style={{
             float: "left",
-            marginTop: "40vh"
+            marginTop: "40vh",
+            marginLeft: 100,
           }}>
           <Grow
             in={true}
@@ -42,8 +44,7 @@ class Landing extends React.Component {
                 variant="h1"
                 style={{
                   color: "rgba(0, 0, 0, 0.8)",
-                  fontSize: "5vw",
-                  marginLeft: 100,
+                  fontSize: "55px",
                 }}>
                 Say hello to <span style={{
                   fontWeight: "bold",
@@ -62,14 +63,14 @@ class Landing extends React.Component {
                 variant="subtitle2"
                 style={{
                   color: "rgba(0, 0, 0, 0.6)",
-                  marginLeft: 100,
                   marginTop: 15,
-                  fontSize: "1vw",
+                  fontSize: "15px",
                   fontWeight: "thin"
                 }}>
                 Delivering the best experience<br />to you, as an artist.
               </Typography>
           </Grow>
+          <ServerLink />
         </div>
       </div>
     );

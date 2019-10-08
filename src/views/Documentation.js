@@ -45,6 +45,8 @@ const styling = {
 
 const Documentation = (props) => {
 
+  document.title = "Documentation | Annie"
+
     return (
       <div className="docs">
         <NavBar />

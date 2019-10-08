@@ -4,7 +4,11 @@ import Slide from "@material-ui/core/Slide";
 import NavBar from '../components/NavBar';
 
 class Team extends React.Component {
+
   render() {
+
+    document.title = "About | Annie"
+
     return (
         <div className="Team">
             <NavBar />

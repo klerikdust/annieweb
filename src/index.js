@@ -15,7 +15,7 @@ import * as serviceWorker from './serviceWorker';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: 'rgba(0,102,153,0.7)'
+      main: 'rgba(0,102,153,1)'
     }
   }
 })
