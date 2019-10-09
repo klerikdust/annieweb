@@ -5,6 +5,7 @@
   "homepage": "https://anniediscord.github.io",
   "dependencies": {
     "@material-ui/core": "^4.4.1",
+    "@material-ui/icons": "^4.4.3",
     "contentful": "^7.9.1",
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
