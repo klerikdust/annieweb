@@ -111,9 +111,9 @@ class ResAppBar extends Component{
   //Larger Screens
   destroyDrawer(){
     return (
-      <AppBar position="static" style={{
+      <AppBar position="fixed" fixed="top" style={{
         boxShadow: 'none',
-        color: 'rgba(0, 0, 0, 0.6)',
+        color: 'rgba(0, 0, 0, 0.4)',
         backgroundColor: 'rgba(255,255,255,1)',
         }}>
 
@@ -123,9 +123,9 @@ class ResAppBar extends Component{
               marginLeft: 'auto',
               marginRight: 20
               }}>
-              <Button size="large" component={About} to="/about">About</Button>
-              <Button size="large" component={Team} to="/team">Team</Button>
-              <Button size="large" component={Docs} to="/docs">Documentation</Button>
+              <Button size="large" color={this.props.view === `About` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={About} to="/about">About</Button>
+              <Button size="large" color={this.props.view === `Team` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Team} to="/team">Team</Button>
+              <Button size="large" color={this.props.view === `Docs` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Docs} to="/docs">Documentation</Button>
             </div>
           </Toolbar>
         </AppBar>

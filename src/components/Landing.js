@@ -77,7 +77,7 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <div className="Landing">
+      <div className="Landing" style={{marginTop: 60}}>
         <div className="Image">
           {this.state.smallScreen ? this.smallImage() : this.largeImage()}
         </div>

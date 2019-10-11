@@ -17,7 +17,7 @@ class ClusterHosting extends React.Component {
               style={{
               color: "rgba(0, 0, 0, 0.6)",
               marginLeft: 100,
-              marginTop: 50,
+              marginTop: 150,
               fontWeight: "bold"
               }}>
              Requirements

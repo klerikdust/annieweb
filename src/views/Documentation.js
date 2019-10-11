@@ -49,7 +49,7 @@ const Documentation = (props) => {
 
     return (
       <div className="docs">
-        <NavBar />
+        <NavBar view="Docs"/>
         <div className="header-text" align="center">
           <Grow
             in={true}
@@ -59,7 +59,7 @@ const Documentation = (props) => {
               style={{
               color: "rgba(0, 0, 0, 1)",
               fontSize: 60,
-              marginTop: "20vh",
+              marginTop: 150,
               }}>
               Annie's <span style={{fontWeight: "bold"}}>Documentation</span>
             </Typography>
