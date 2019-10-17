@@ -123,9 +123,9 @@ class ResAppBar extends Component{
               marginLeft: 'auto',
               marginRight: 20
               }}>
-              <Button size="large" color={this.props.view === `About` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={About} to="/about">About</Button>
-              <Button size="large" color={this.props.view === `Team` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Team} to="/team">Team</Button>
-              <Button size="large" color={this.props.view === `Docs` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Docs} to="/docs">Documentation</Button>
+              <Button size="large" variant="subtitle1" style={{textTransform: "none", fontSize: 15}} color={this.props.view === `About` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={About} to="/about">About</Button>
+              <Button size="large" style={{textTransform: "none", fontSize: 15}} color={this.props.view === `Team` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Team} to="/team">Team</Button>
+              <Button size="large" style={{textTransform: "none", fontSize: 15}} color={this.props.view === `Docs` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Docs} to="/docs">Documentation</Button>
             </div>
           </Toolbar>
         </AppBar>
