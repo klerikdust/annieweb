@@ -10,12 +10,12 @@ class Landing extends React.Component {
   }
 
   componentWillMount(){
-    if(window.innerWidth <= 600){
+    if(window.innerWidth <= 1000){
       this.setState({smallScreen:true});
     }
 
     window.addEventListener('resize',()=>{
-      if(window.innerWidth <= 600){
+      if(window.innerWidth <= 1000){
         this.setState({smallScreen:true});
       }
       else{
@@ -76,6 +76,7 @@ class Landing extends React.Component {
 
 
   render() {
+
     return (
       <div className="Landing" style={{marginTop: 60}}>
         <div className="Image">
@@ -87,7 +88,7 @@ class Landing extends React.Component {
           style={{
             float: "left",
             marginTop: "40vh",
-            marginLeft: "7vw",
+            marginLeft: "10vw",
             position: "absolute"
           }}>
           <Grow
@@ -96,17 +97,12 @@ class Landing extends React.Component {
             direction="right"
           >
             <Typography 
-                variant="h1"
+                variant="h2"
                 style={{
                   color: "rgba(0, 0, 0, 0.8)",
-                  fontSize: "55px",
+                  fontWeight: "bold"
                 }}>
-                Say hello to <span style={{
-                  fontWeight: "bold",
-                  //color: "rgba(102,204,255,0.7)"}}
-                  }}>
-                  Annie.
-                  </span>
+                Creative Machine.
               </Typography>
           </Grow>
           <Grow
@@ -115,14 +111,12 @@ class Landing extends React.Component {
             direction="right"
           >
             <Typography 
-                variant="subtitle2"
+                variant="subtitle1"
                 style={{
                   color: "rgba(0, 0, 0, 0.6)",
-                  marginTop: 15,
-                  fontSize: "15px",
-                  fontWeight: "thin"
+                  marginTop: 7,
                 }}>
-                Delivering the best experience<br />to you, as an artist.
+                Delivering the best artist experience right in your server.
               </Typography>
           </Grow>
           <ServerLink />

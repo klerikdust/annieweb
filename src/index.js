@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
-import './index.css';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from "@material-ui/core/CssBaseline";
 import App from './App';
 import Documentation from './views/Documentation';
 import Team from './views/Team';
@@ -11,11 +10,21 @@ import About from './views/About';
 import ClusterHosting from './views/ClusterHosting'
 import * as serviceWorker from './serviceWorker';
 
+import './index.css';
+
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: 'rgba(0,102,153,1)'
+      main: 'rgba(63, 158, 181, 1)',
+    },
+    background:{
+      default: "rgba(250, 251, 252, 1)"
+    }
+  },
+  props: {
+    MuiButtonBase: {
+      disableRipple: true
     }
   }
 })
@@ -23,13 +32,16 @@ const theme = createMuiTheme({
 const routing = (
     <Router>
       <div>
-      <ThemeProvider theme={theme}>
+      <MuiThemeProvider theme={theme}>
+
+        <CssBaseline />
+
         <Route exact path="/" component={App} />
         <Route exact path="/docs" component={Documentation} />
         <Route exact path="/team" component={Team} />
         <Route exact path="/about" component={About} />
         <Route exact path="/docs/cluster-hosting" component={ClusterHosting} />
-      </ThemeProvider>
+      </MuiThemeProvider>
       </div>
     </Router>
 )

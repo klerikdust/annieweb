@@ -54,12 +54,12 @@ class ResAppBar extends Component{
   }
 
   componentWillMount(){
-    if(window.innerWidth <= 600){
+    if(window.innerWidth <= 1000){
       this.setState({drawerActivate:true});
     }
 
     window.addEventListener('resize',()=>{
-      if(window.innerWidth <= 600){
+      if(window.innerWidth <= 1000){
         this.setState({drawerActivate:true});
       }
       else{
@@ -72,8 +72,8 @@ class ResAppBar extends Component{
   createDrawer(){
     return (
       <div>
-        <AppBar color="rgba(255, 255, 255, 1)" style={{boxShadow:"none"}}>
-          <Toolbar  color="rgba(255, 255, 255, 1)">
+        <AppBar color="background.default" style={{boxShadow:"none"}}>
+          <Toolbar  color="background.default">
             <Grid container direction = "row" justify = "space-between" alignItems="center">
               <MenuIcon
                 className = {this.props.classes.sideBarIcon}
@@ -96,9 +96,8 @@ class ResAppBar extends Component{
 
             <List className = {this.props.classes.list}>
 
-                <ListItem key = {1} button divider component={About} to="/about"> About </ListItem>
-                <ListItem key = {2} button divider component={Team} to="/team"> Team </ListItem>               
-                <ListItem key = {3} button divider component={Docs} to="/docs"> Documentation </ListItem>
+                <ListItem key = {1} button divider component={Team} to="/team"> Team </ListItem>               
+                <ListItem key = {2} button divider component={Docs} to="/docs"> Documentation </ListItem>
             </List>
 
          </div>
@@ -111,21 +110,19 @@ class ResAppBar extends Component{
   //Larger Screens
   destroyDrawer(){
     return (
-      <AppBar position="fixed" fixed="top" style={{
+      <AppBar color="background.default" style={{
         boxShadow: 'none',
-        color: 'rgba(0, 0, 0, 0.4)',
-        backgroundColor: 'rgba(255,255,255,1)',
+        color: 'rgba(0, 0, 0, 0.4)'
         }}>
 
           <Toolbar>
-            <Button size="large" color="primary" component={Home} to="/">Annie</Button>
+            <Button size="large" component={Home} to="/">Annie</Button>
             <div className="Right Toolbar" style={{
               marginLeft: 'auto',
               marginRight: 20
               }}>
-              <Button size="large" variant="subtitle1" style={{textTransform: "none", fontSize: 15}} color={this.props.view === `About` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={About} to="/about">About</Button>
-              <Button size="large" style={{textTransform: "none", fontSize: 15}} color={this.props.view === `Team` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Team} to="/team">Team</Button>
-              <Button size="large" style={{textTransform: "none", fontSize: 15}} color={this.props.view === `Docs` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Docs} to="/docs">Documentation</Button>
+              <Button size="large" style={{textTransform: "none", fontSize: 16, fontWeight: 450}} color={this.props.view === `Team` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Team} to="/team">Team</Button>
+              <Button size="large" style={{textTransform: "none", fontSize: 16, fontWeight: 450}} color={this.props.view === `Docs` ? `primary` : `rgba(0, 0, 0, 0.4)`} component={Docs} to="/docs">Documentation</Button>
             </div>
           </Toolbar>
         </AppBar>
