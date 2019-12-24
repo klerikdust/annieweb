@@ -1,3 +1,17 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Open Sans", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 html {
   overflow: scroll;
   overflow-x: hidden;
@@ -13,13 +27,7 @@ html {
 
 .App {
   text-align: center;
-  background: rgb(31, 31, 31)
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  background: rgb(255, 255, 255)
 }
 
 .App-header {
@@ -33,15 +41,20 @@ html {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.landingtitle {
+  color : rgba(230, 80, 102, 1);
+  transition: all 0.4s ease-in;
+}
+.landingtitle-scroll-down {
+  color : rgba(0, 0, 0, 0.8);
+  transition: all 0.4s ease-in;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+@keyframes fading {
+  0% {color: rgba(0, 0, 0, 1)}
+  100% {color: rgba(0, 0, 0, 0.1)}
 }
+
+

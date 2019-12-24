@@ -1,6 +1,5 @@
 import React from 'react'
-import Typography from "@material-ui/core/Typography";
-import Grow from "@material-ui/core/Grow";
+import { Helmet } from 'react-helmet'
 import NavBar from '../components/NavBar';
 import Cardbox from '../components/Cardbox';
 import naphAvatar from '../assets/naphavatar.png';
@@ -10,103 +9,100 @@ import fwubblesAvatar from '../assets/fwubblesavatar.png';
 import tantanAvatar from '../assets/tantanavatar.jpg';
 import hugoAvatar from '../assets/hugoavatar.jpg';
 import { Grid } from '@material-ui/core';
+import Title from '../components/Title';
+import { mobile } from '../config/Layout';
 
 class Team extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {smallScreen: false}
+    this.state = {mobileLayout:false};
+    this.minifiedWidth = mobile.maxWidth
   }
 
-  componentWillMount(){
-    if(window.innerWidth <= 600){
-      this.setState({smallScreen:true});
-    }
 
-    window.addEventListener('resize',()=>{
-      if(window.innerWidth <= 600){
-        this.setState({smallScreen:true});
+  componentDidMount(){
+      if(window.innerWidth <= this.minifiedWidth){
+        this.setState({mobileLayout:true});
       }
-      else{
-        this.setState({smallScreen:false})
-      }
-    });
+
+      window.addEventListener('resize',()=>{
+        if(window.innerWidth <= this.minifiedWidth){
+          this.setState({mobileLayout:true});
+        }
+        else{
+          this.setState({mobileLayout:false})
+        }
+      });
   }
 
   render() {
 
     document.title = "Team | Annie"
 
+    const cardsMargin = {
+      marginTop: 50,
+      marginBottom: 50
+    }
+
     return (
         <div className="Team">
-        <NavBar view="Team"/>
-            <div className="header" style={{marginLeft: 100}}>
-            <Grow
-            in={true}
-            timeout={1000}>
-            <Typography 
-              variant="h3"
-              style={{
-              color: "rgba(0, 0, 0, 1)",
-              marginTop: 150,
-              }}>
-              Development Team
-            </Typography>
-          </Grow>
-          <Grow
-            in={true}
-            timeout={2000}>
-            <Typography 
-                variant="subtitle1"
-                style={{
-                color: "rgba(0, 0, 0, 0.6)",
-                marginTop: 10,
-                fontWeight: "thin"
-                }}>
-               Below are amazing people that make annie possible!
-              </Typography>
-          </Grow>
-              </div>
+          <Helmet>
+            <title>Team | Annie</title>
+          </Helmet>
+          <NavBar view="Team"/>
+          <Grid container spacing={2} style={{
+            padding: this.state.mobileLayout ? 10 : 100,
+            textAlign: this.state.mobileLayout ? "center" : "left"}}>
 
+
+            {/**  Header  */}
+            <Grid item xs={12} style={{marginLeft: this.state.mobileLayout ? 0 : 80}}>
+              <Title title="The Annie Team" caption="below are amazing people that make Annie possible!"/>
+            </Grid>
             
-            <div className="personCard" 
-            style={{
-              marginBottom: 100, 
-              marginTop: 100,
-            }}>
-
+            {/**  Developer List - Body[1] */}
+            <Grid item xs={12} style={cardsMargin}>
               <Grid container justify="center" spacing={2}>
-
                 <Grid item>
-                  <Cardbox titleName="Panpan" avatarRef={panAvatar} role="Lead Developer"
-                  description= "Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                  <Cardbox titleName="Panpan" avatarRef={panAvatar} role="Developer"
+                  description= "I may come off as timid or rude. I may even not talk to you at first but eventually I will. Every person is not like each other. I’ll try not to skip around the bush and tell it to you straight. "/>
                 </Grid>   
-
                 <Grid item>
                   <Cardbox titleName="Naph" avatarRef={naphAvatar} role="UI/UX Engineer"
-                  description= "Hello there! I'm the owner of AAU and mainly managing visual part of annie. I love designing modern UI!"/>
-                </Grid> 
-                
+                  description= "Breathing color and canvas. I'm mainly tinkering Annie's design system and ensuring the fluid experience that you get while using it. :)"/>
+                </Grid>  
+              </Grid>
+            </Grid>
+
+            {/**  Header 2  */}
+            <Grid item xs={12} style={{marginLeft: this.state.mobileLayout ? 0 : 80}}>
+              <Title title="Contributors" caption="They helped us developing Annie part-time!"/>
+            </Grid>
+
+            {/**  Contributor List - Body[2] */}
+            <Grid item xs={12} style={cardsMargin}>
+              <Grid container justify="center" spacing={2}>
                 <Grid item>
-                  <Cardbox titleName="Tantan" avatarRef={tantanAvatar} role="Infrastructure Engineer"
+                  <Cardbox titleName="Tantan" avatarRef={tantanAvatar} role="Developer"
                   description= "I'm still learning but i have good ideas, please bare with me."/>
-                </Grid>            
-                
+                </Grid>                        
                 <Grid item>
                   <Cardbox titleName="ametotaiyou" avatarRef={sunnyAvatar} role="Developer"
                   description= "Hey~ I program and draw. Nuff said"/>
                 </Grid>
-
                 <Grid item>
                   <Cardbox titleName="Fwubbles" avatarRef={fwubblesAvatar} role="Developer"
-                  description= "Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                  description= "Clan System Director"/>
                 </Grid>
-
                 <Grid item>
-                  <Cardbox titleName="Hugo" avatarRef={hugoAvatar} role="Developer"
-                  description= "Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                  <Cardbox titleName="Hugo" avatarRef={hugoAvatar} role="Bug Tracker"
+                  description= "Only coffee what matters the most."/>
                 </Grid>
               </Grid>
-            </div>
+            </Grid>
+
+
+          </Grid>
         </div>
     )
   }

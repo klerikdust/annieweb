@@ -1,66 +1,82 @@
 import React from 'react'
-import ClusterHostingIcon from '../assets/clusterhosting-icon.png';
-import ApiIcon from '../assets/api-icon.png';
-import Grow from "@material-ui/core/Grow";
-import Typography from "@material-ui/core/Typography";
+import { Helmet } from 'react-helmet'
+import FaqIcon from '../assets/faq.png';
+import VersionIcon from '../assets/version.png';
+import BugIcon from '../assets/bug.png';
 import NavBar from '../components/NavBar';
 import Cardbox from '../components/Cardbox';
-import { Grid, CardActionArea } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Title from '../components/Title';
+import { mobile } from '../config/Layout';
 
 
 class Documentation extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {mobileLayout:false};
+    this.minifiedWidth = mobile.maxWidth
+  }
+
+
+  componentDidMount(){
+      if(window.innerWidth <= this.minifiedWidth){
+        this.setState({mobileLayout:true});
+      }
+
+      window.addEventListener('resize',()=>{
+        if(window.innerWidth <= this.minifiedWidth){
+          this.setState({mobileLayout:true});
+        }
+        else{
+          this.setState({mobileLayout:false})
+        }
+      });
+  }
+
+
+
   render() {
-    document.title = "Documentation | Annie"
+    const cardsMargin = {
+      marginTop: 50,
+      marginBottom: 50
+    }
 
     return (
       <div className="docs">
+        <Helmet>
+          <title>Documentations | Annie</title>
+        </Helmet>
         <NavBar view="Docs"/>
-        <div className="header-text" align="left">
-          <Grow
-            in={true}
-            timeout={1000}>
-            <Typography 
-              variant="h3"
-              style={{
-              color: "rgba(0, 0, 0, 1)",
-              marginTop: 150,
-              marginLeft: 100
-              }}>
-              Documentation
-            </Typography>
-          </Grow>
-          <Grow
-            in={true}
-            timeout={2000}>
-            <Typography 
-                variant="subtitle1"
-                style={{
-                color: "rgba(0, 0, 0, 0.6)",
-                marginTop: 10,
-                fontWeight: "thin",
-                marginLeft: 100
-                }}>
-                Here you will find all useful informations related to Annie's API.<br />From how to host your own Annie Cluster to in-depth details of the framework.
-              </Typography>
-          </Grow>
-        </div>
-        
-        <div className="DocCard"
-            style={{
-              marginBottom: 100, 
-              marginTop: "10vh",
-            }}>
+        <Grid container spacing={2} style={{
+          padding: this.state.mobileLayout ? 10 : 100,
+          textAlign: this.state.mobileLayout ? "center" : "left"}}>
 
-              <Grid container justify="center" spacing={2}>
-                <Grid item>
-                      <Cardbox titleName="API" avatarRef={ApiIcon} lightbox={true}/>
-                  </Grid>  
-                  <Grid item>
-                    <Cardbox titleName="Clustering" avatarRef={ClusterHostingIcon}/>
-                  </Grid>  
-              </Grid>
 
-        </div>
+          {/**  Header  */}
+          <Grid item xs={12} style={{marginLeft: this.state.mobileLayout ? 0 : 80}}>
+            <Title title="Documentation" caption="This is where we stored in depth informations about Annie."/>
+          </Grid>
+
+          {/**  Docs List - Body */}
+          <Grid item xs={12} style={cardsMargin}>
+            <Grid container justify="center" spacing={2}>
+              <Grid item>
+                <Cardbox iconMedia titleName="FAQ" avatarRef={FaqIcon} 
+                description="Have any question to ask? we got you covered. We have answered some frequently asked questions in the past. Go take a look!"/>
+              </Grid> 
+              <Grid item>
+                <Cardbox iconMedia titleName="Version History" avatarRef={VersionIcon} 
+                description="A pile of version log that luckily we were remembered to record one of them."/>
+              </Grid> 
+              <Grid item>
+                <Cardbox iconMedia titleName="Known Bugs" avatarRef={BugIcon}
+                description="We are too lazy to resolve nasty bugs in one night! If you are curious, feel free to check them!"/>
+              </Grid>   
+            </Grid>
+          </Grid>
+
+
+        </Grid>
       </div>
     )
   }

@@ -7,10 +7,11 @@ import { Slide, withStyles,
       width: 300,
       height: 400,
       borderRadius: "15px",
-      boxShadow: "0 1px 20px -12px rgba(33,33,33,0.4)",
+      boxShadow: "0 1px 20px -12px rgba(33,33,33, 0.5)",
       "-webkit-transition": "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
       transition: "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
       backgroundColor: "rgba(255, 255, 255, 1)",
+      opacity: 1,
       
       "&:after": {
         content: "",
@@ -21,7 +22,7 @@ import { Slide, withStyles,
         left: 0,
         width: "100%",
         height: "100%",
-        opacity: 0,
+        opacity: 1,
         "-webkit-transition": "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
         transition: "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)"
       },
@@ -39,7 +40,6 @@ import { Slide, withStyles,
     cardTextTitle: {
       textAlign: "center",
       fontWeight: 'bold',
-      fontSize: 30,
       color: 'rgba(0, 0, 0, 0.7)',
       marginTop: 20
     },
@@ -54,11 +54,19 @@ import { Slide, withStyles,
       fontSize: 12,
       color: 'rgba(0, 0, 0, 0.6)',
     },
-    media: {
+
+    defaultMedia: {
       height: 150,
       width: 150,
       marginLeft: 60,
-      marginTop: 30
+      marginTop: 30,
+    },
+
+    iconMedia: {
+      height: 100,
+      width: 100,
+      marginLeft: 85,
+      marginTop: 30,
     },
 
     actionArea: {
@@ -75,15 +83,11 @@ const Cardbox = (props) => {
 
     return (
       <div className={props.classes.card}>
-        <Slide
-            in={true}
-            timeout={1000}
-            direction="up"
-        >
+        <Slide in={true} direction="up" timeout={1200}>
           <CardActionArea classes={{root: props.classes.actionArea, focusHighlight: props.classes.focusHighlight}}>     
             <CardContent>
-              <Avatar alt={props.titleName} src={props.avatarRef} className={props.classes.media} />
-              <Typography className={props.classes.cardTextTitle} variant="h5" component="h2">
+              <Avatar alt={props.titleName} src={props.avatarRef} className={props.iconMedia ? props.classes.iconMedia : props.classes.defaultMedia}/>
+              <Typography className={props.classes.cardTextTitle} variant={props.smalltitle ? "h5" : "h4"} component={props.smalltitle ? "h5" : "h4"}>
                   {props.titleName}
               </Typography>
               <Typography gutterBottom className={props.classes.cardTextRole} variant="subtitle1" component="h2">
@@ -94,7 +98,7 @@ const Cardbox = (props) => {
               </Typography>      
             </CardContent>
           </CardActionArea>
-        </Slide> 
+        </Slide>
       </div>
     )
 }

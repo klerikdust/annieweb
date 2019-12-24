@@ -1,0 +1,333 @@
+{
+    "EN": [
+        {   "name": "addanime",
+            "description": "Registering your MAL or Kitsu account",
+            "usage": "addanime <url>"
+        },
+        {
+            "name": "addrole",
+            "description": "Adds role to a specific user",
+            "usage": "addrole <user> <role>"
+        },
+        {
+            "name": "adminhelp",
+            "description": "A list of all Admin Commands sent by DM",
+            "usage": "adminhelp"
+        },
+        {
+            "name": "addac",
+            "description": "Adds artcoins to a specific user",
+            "usage": ">addac <user>"
+        },
+        {
+            "name": "ask",
+            "description": "You can ask any question and Annie will answer you",
+            "usage": "ask <question>"
+        },
+        {
+            "name": "avatar",
+            "description": "Grabs your's or a specified user's avatar and displays it",
+            "usage": "avatar"
+        },
+        {
+            "name": "balance",
+            "description": "Checks your current Artcoins Balance",
+            "usage": "balance"
+        },
+        {
+            "name": "bulkremove",
+            "description": "Removes a role from everybody that has it",
+            "usage": "bulkremove <rolename>"
+        },
+        {
+            "name": "buy",
+            "description": "Buys an item from the shop",
+            "usage": "buy <category> <itemname>"
+        },
+        {
+            "name": "cardpedia",
+            "description": "Displays list of droppable cards from Lucky Tickets",
+            "usage": ">cardpedia"
+        },
+        {
+            "name": "cat",
+            "description": "Displays a random picture of a cat",
+            "usage": "cat"
+        },
+        {
+            "name": "eat",
+            "description": "Eats the capsules you get from gacha and gives you XP in return",
+            "usage": "eat <amount>"
+        },
+        {
+            "name": "coinflip",
+            "description": "Flips a coin for heads or tails",
+            "usage": "flip"
+        },
+        {
+            "name": "collection",
+            "description": "View yours or someones collected cards",
+            "usage": "collection <user>"
+        },
+        {
+            "name": "complaint",
+            "description": "Give a complaint to a user",
+            "usage": "complain <user>"
+        },
+        {
+            "name": "cartcoins",
+            "description": "Converts Artcoins into EXP",
+            "usage": "cartcoins <amount>"
+        },
+        {
+            "name": "craft",
+            "description": "Opening crafting interface",
+            "usage": "craft"
+        },
+        {
+            "name": "daily",
+            "description": "Collects a daily flat rate of Artcoins",
+            "usage": "daily"
+        },
+        {
+            "name": "db",
+            "description": "Developer toolkit",
+            "usage": "nothing to show in here."
+        },
+        {
+            "name": "eval",
+            "description": "Developer toolkit",
+            "usage": "nothing to show in here."
+        },
+        {
+            "name": "eventjoin",
+            "description": "Allows you to submit to an event",
+            "usage": "join"
+        },
+        {
+            "name": "event",
+            "description": "Add a event with a time to display",
+            "usage": "event"
+        },
+        {
+            "name": "fox",
+            "description": "Displays a random picture of a fox",
+            "usage": "fox"
+        },
+        {
+            "name": "gacharoll",
+            "description": "Rolls a gacha ticket",
+            "usage": "roll"
+        },
+        {
+            "name": "gift",
+            "description": "Gives an item from your inventory to a specified user",
+            "usage": "gift <user>"
+        },
+        {
+            "name": "help",
+            "description": "Minified version of available commands",
+            "usage": "help"
+        },
+        {
+            "name": "hug",
+            "description": "Displays a random gif of a hug",
+            "usage": "hug"
+        },
+        {
+            "name": "hugo",
+            "description": "A tribute to our Bug Tracker",
+            "usage": "hugo"
+        },
+        {
+            "name": "inventory",
+            "description": "Views your inventory",
+            "usage": "inventory"
+        },
+        {
+            "name": "invite", 
+            "description": "Generate AAU's invite link",
+            "usage": "invite"
+        },
+        {
+            "name": "leaderboard",
+            "description": "Displays options for the leaderboards",
+            "usage": "leaderboard"
+        },
+        {
+            "name": "level",
+            "description": "Displays your level card",
+            "usage": "level"
+        },
+        {
+            "name": "mail",
+            "description": "Send a dm to a specified user",
+            "usage": "mail <user>"
+        },
+        {
+            "name": "manageprofile",
+            "description": "Choose from your stickers, badges and covers",
+            "usage": "manageprofile"
+        },
+        {
+            "name": "managerelations",
+            "description": "Manages the relationships a user can be in",
+            "usage": "managerelations"
+        },
+        {
+            "name": "mute",
+            "description": "Mutes a user and sends them a dm",
+            "usage": "mute <user>"
+        },
+        {
+            "name": "naph",
+            "description": "A tribute to Naph",
+            "usage": "naph"
+        },
+        {
+            "name": "panda",
+            "description": "Displays a random picture of a panda",
+            "usage": "panda"
+        },
+        {
+            "name": "pat",
+            "description": "Displays a random gif of a pat",
+            "usage": "pat"
+        },
+        {
+            "name": "pay",
+            "description": "Transfer a specified amount of Artcoins to a user.",
+            "usage": "pay <user>"
+        },
+        {
+            "name": "ping",
+            "description": "Displays Annie's current latency.",
+            "usage": "ping"
+        },
+        {
+            "name": "profile", 
+            "description": "Displays user's profile card",
+            "usage": "profile"
+        },
+        {
+            "name": "prune", 
+            "description": "Deletes up to 100 messages in the current channel.",
+            "usage": "prune <amount>"
+        },
+        {
+            "name": "recycle",
+            "description": "Selling unusable items from inventory",
+            "usage": "recycle"
+        },
+        {
+            "name": "redeem", 
+            "description": "Buys gacha tickets",
+            "usage": "redeem <amount>"
+        },
+        {
+            "name": "removerole", 
+            "description": "Removing user's role",
+            "usage": "removerole <user> <role>" 
+        },
+        {
+            "name": "removesticker",
+            "description": "Removs a sticker from your profile card",
+            "usage": "removesticker"
+        },
+        {
+            "name": "rep",
+            "description": "Gives reputation point to a user",
+            "usage": "rep <user>"
+        },
+        {
+            "name": "resetinventory",
+            "description": "Developer toolkit",
+            "usage": "nothing to show in here."
+        },
+        {
+            "name": "resetlvl",
+            "description": "Developer toolkit",
+            "usage": "nothing to show in here."
+        },
+        {
+            "name": "retrievedatabase",
+            "description": "Developer toolkit",
+            "usage": "nothing to show in here."
+        },
+        {
+            "name": "retrievelogs", 
+            "description": "Developer toolkit",
+            "usage": "nothing to show in here."
+        },
+        {
+            "name": "rolldice",
+            "description": "Retrives a random roll",
+            "usage": "rolldice"
+        },
+        {
+            "name": "say", 
+            "description": "Talk through Annie",
+            "usage": "say <message>"
+        },
+        {
+            "name": "screenshare",
+            "description": "Gives a link to screen share in the server",
+            "usage": "screenshare"
+        },
+        {
+            "name": "serverremote",
+            "description": "Developer toolkit",
+            "usage": "nothing to show in here."
+        },
+        {
+            "name": "serverboost",
+            "description": "Displays info about the server boost level",
+            "usage": "serverboost"
+        },
+        {
+            "name": "servereventends",
+            "description": "Take all expired tickets from event participant",
+            "usage": "eventend"
+        },
+        {
+            "name": "serverinfo",
+            "description": "Displays info about the server",
+            "usage": "serverinfo"
+        },
+        {
+            "name": "setdesc",
+            "description": "Set description of your profile card",
+            "usage": "setdesc"
+        },
+        {
+            "name": "shop",
+            "description": "Displays items that you can buy",
+            "usage": "shop"
+        },
+        {
+            "name": "stats",
+            "description": "Visualizing current status of Annie",
+            "usage": "stats"
+        },
+        {
+            "name": "strike",
+            "description": "Gives a strike to a user",
+            "usage": "strike"
+        },
+        {
+            "name": "switch",
+            "description": "Switching theme for booster/premium user",
+            "usage": "switch"
+        },
+        {
+            "name": "unmute",
+            "description": "Unmutes a user",
+            "usage": "unmute <user> <reason>"
+        },
+        {
+            "name": "weeklyevent",
+            "description": "Checks the time left for the weekly event",
+            "usage": "weekly"
+        }
+    ]
+}
