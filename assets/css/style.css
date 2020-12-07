@@ -1,0 +1,48 @@
+:root {
+    --theme: #e7e9ed;
+    --text: rgb(31, 31, 31);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--theme);
+    font-family: 'Open Sans', sans-serif;
+}
+/*--- navigation bar ---*/
+.navbar {
+    background:var(--theme);
+    border-radius: 100px;
+    -webkit-box-shadow: 0px 0.5px 2px 0px rgba(50, 50, 50, 0.17);
+    -moz-box-shadow:    0px 0.5px 2px 0px rgba(50, 50, 50, 0.17);
+    box-shadow:         0px 0.5px 2px 0px rgba(50, 50, 50, 0.17);
+    margin: 50px;
+}
+.nav-link,
+.navbar-brand {
+    color: var(--text);
+    cursor: pointer;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: #000;
+}
+.navbar-collapse {
+    justify-content: center;
+}
+.nav-item {
+    font-size: 1.2em;
+}
+.main img {
+    position: absolute;
+    opacity: 0.2;
+}
+.main h1 {
+    font-weight: bold;
+    font-size: 4em;
+}
+.main h2 {
+    font-size: 1.5em;
+}
